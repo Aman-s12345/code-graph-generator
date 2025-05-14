@@ -1,0 +1,63 @@
+{
+  "name": "code-graph-generator",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "dev": "ts-node src/index.ts",
+    "lint": "eslint src --ext .ts",
+    "example": "ts-node examples/basic.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "code-graph",
+    "static-analysis",
+    "code-visualization",
+    "typescript",
+    "javascript",
+    "ast",
+    "react-codegraph",
+    "High level code visualization"
+  ],
+  "author": "Aman Singh , amansinghbiuri@gmail.com",
+  "license": "MIT",
+  "description": "Generate Json Object of code that can be used to generate code-graphs for JavaScript/TypeScript/Range projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aman-s12345/code-graph-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aman-s12345/code-graph-generator.git/issues"
+  },
+  "homepage": "https://github.com/Aman-s12345/code-graph-generator.git#readme",
+  "dependencies": {
+    "@babel/parser": "^7.27.2",
+    "@babel/traverse": "^7.27.1",
+    "@babel/types": "^7.27.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "@typescript-eslint/typescript-estree": "^8.32.1",
+    "glob": "^11.0.2",
+    "micromatch": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.20.7",
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
+    "@types/p-queue": "^3.1.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

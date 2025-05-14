@@ -1,0 +1,157 @@
+{
+  "name": "Test Project",
+  "packages": [
+    {
+      "name": "src\\componet",
+      "files": [
+        {
+          "path": "src\\componet\\type.tsx",
+          "types": [],
+          "variables": [],
+          "functions": [
+            {
+              "name": "root",
+              "referencedIn": [],
+              "startLine": 1,
+              "length": 102,
+              "dependencies": [],
+              "types": [],
+              "fileName": "type.tsx",
+              "callsTo": [],
+              "calledBy": []
+            }
+          ],
+          "dependencies": [],
+          "exports": [],
+          "componentHierarchy": {},
+          "detailedDependencies": []
+        }
+      ],
+      "dependencies": [],
+      "exports": []
+    },
+    {
+      "name": "src",
+      "files": [
+        {
+          "path": "src\\codeExtractor.js",
+          "types": [],
+          "variables": [
+            {
+              "name": "codeMapper",
+              "dependencies": []
+            }
+          ],
+          "functions": [
+            {
+              "name": "root",
+              "referencedIn": [],
+              "startLine": 1,
+              "length": 38,
+              "dependencies": [],
+              "types": [],
+              "fileName": "codeExtractor.js",
+              "callsTo": [],
+              "calledBy": []
+            },
+            {
+              "name": "getRootFiles",
+              "referencedIn": [
+                "src\\codeExtractor.js"
+              ],
+              "startLine": 10,
+              "length": 3,
+              "dependencies": [],
+              "types": [],
+              "fileName": "codeExtractor.js",
+              "callsTo": [
+                "getSourceFile",
+                "getSourceFileDependencies",
+                "buildCodebaseMap"
+              ],
+              "calledBy": []
+            },
+            {
+              "name": "getSourceFile",
+              "referencedIn": [
+                "src\\codeExtractor.js"
+              ],
+              "startLine": 18,
+              "length": 3,
+              "dependencies": [],
+              "types": [],
+              "fileName": "codeExtractor.js",
+              "callsTo": [
+                "getRootFiles",
+                "getSourceFileDependencies",
+                "buildCodebaseMap"
+              ],
+              "calledBy": []
+            },
+            {
+              "name": "getSourceFileDependencies",
+              "referencedIn": [
+                "src\\codeExtractor.js"
+              ],
+              "startLine": 26,
+              "length": 3,
+              "dependencies": [],
+              "types": [],
+              "fileName": "codeExtractor.js",
+              "callsTo": [
+                "getRootFiles",
+                "getSourceFile",
+                "buildCodebaseMap"
+              ],
+              "calledBy": []
+            },
+            {
+              "name": "buildCodebaseMap",
+              "referencedIn": [
+                "src\\codeExtractor.js"
+              ],
+              "startLine": 34,
+              "length": 4,
+              "dependencies": [],
+              "types": [],
+              "fileName": "codeExtractor.js",
+              "callsTo": [
+                "getRootFiles",
+                "getSourceFile",
+                "getSourceFileDependencies"
+              ],
+              "calledBy": []
+            }
+          ],
+          "dependencies": [
+            "@traversets/code-extractor",
+            "typescript"
+          ],
+          "exports": [
+            "getRootFiles",
+            "getSourceFile",
+            "getSourceFileDependencies",
+            "buildCodebaseMap"
+          ],
+          "detailedDependencies": [
+            {
+              "module": "@traversets/code-extractor",
+              "imports": []
+            },
+            {
+              "module": "typescript",
+              "imports": []
+            }
+          ]
+        }
+      ],
+      "dependencies": [],
+      "exports": [
+        "getRootFiles",
+        "getSourceFile",
+        "getSourceFileDependencies",
+        "buildCodebaseMap"
+      ]
+    }
+  ]
+}
