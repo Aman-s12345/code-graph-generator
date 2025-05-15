@@ -2,8 +2,6 @@
 
 Generate detailed code structure graphs for JavaScript/TypeScript projects.
 
-# Code Graph Generator
-
 <p align="center">
   <img src="https://via.placeholder.com/200x200.png?text=Code+Graph" alt="Code Graph Generator Logo" width="200"/>
 </p>
