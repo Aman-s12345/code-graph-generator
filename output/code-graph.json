@@ -2,10 +2,10 @@
   "name": "Test Project",
   "packages": [
     {
-      "name": "src\\componet",
+      "name": ".",
       "files": [
         {
-          "path": "src\\componet\\type.tsx",
+          "path": "index.jsx",
           "types": [],
           "variables": [],
           "functions": [
@@ -13,18 +13,56 @@
               "name": "root",
               "referencedIn": [],
               "startLine": 1,
-              "length": 102,
-              "dependencies": [],
+              "length": 7,
+              "dependencies": [
+                {
+                  "React": "react"
+                },
+                {
+                  "ReactDOM": "react-dom"
+                },
+                {
+                  "App": "./App"
+                }
+              ],
               "types": [],
-              "fileName": "type.tsx",
-              "callsTo": [],
+              "fileName": "index.jsx",
+              "callsTo": [
+                "App"
+              ],
               "calledBy": []
             }
           ],
-          "dependencies": [],
+          "dependencies": [
+            "react",
+            "react-dom",
+            "./App"
+          ],
           "exports": [],
-          "componentHierarchy": {},
-          "detailedDependencies": []
+          "detailedDependencies": [
+            {
+              "module": "react",
+              "imports": [
+                "React",
+                "default"
+              ]
+            },
+            {
+              "module": "react-dom",
+              "imports": [
+                "ReactDOM",
+                "default"
+              ]
+            },
+            {
+              "module": "./App",
+              "imports": [
+                "App",
+                "default"
+              ]
+            }
+          ],
+          "componentHierarchy": {}
         }
       ],
       "dependencies": [],
@@ -34,123 +72,175 @@
       "name": "src",
       "files": [
         {
-          "path": "src\\codeExtractor.js",
+          "path": "src/util.ts",
           "types": [],
-          "variables": [
-            {
-              "name": "codeMapper",
-              "dependencies": []
-            }
-          ],
+          "variables": [],
           "functions": [
             {
               "name": "root",
               "referencedIn": [],
               "startLine": 1,
-              "length": 38,
+              "length": 9,
               "dependencies": [],
               "types": [],
-              "fileName": "codeExtractor.js",
+              "fileName": "util.ts",
               "callsTo": [],
               "calledBy": []
             },
             {
-              "name": "getRootFiles",
+              "name": "getInitialMessage",
               "referencedIn": [
-                "src\\codeExtractor.js"
+                "src/util.ts"
               ],
-              "startLine": 10,
+              "startLine": 2,
               "length": 3,
               "dependencies": [],
               "types": [],
-              "fileName": "codeExtractor.js",
+              "fileName": "util.ts",
+              "callsTo": [],
+              "calledBy": [
+                "src/app.js:App"
+              ]
+            },
+            {
+              "name": "getUpdatedMessage",
+              "referencedIn": [
+                "src/util.ts"
+              ],
+              "startLine": 6,
+              "length": 3,
+              "dependencies": [],
+              "types": [],
+              "fileName": "util.ts",
+              "callsTo": [],
+              "calledBy": [
+                "src/app.js:App",
+                "src/app.js:handleClick"
+              ]
+            }
+          ],
+          "dependencies": [],
+          "exports": [
+            "getInitialMessage",
+            "getUpdatedMessage"
+          ],
+          "detailedDependencies": []
+        },
+        {
+          "path": "src/app.js",
+          "types": [],
+          "variables": [],
+          "functions": [
+            {
+              "name": "root",
+              "referencedIn": [],
+              "startLine": 1,
+              "length": 21,
+              "dependencies": [
+                {
+                  "React": "react"
+                },
+                {
+                  "useState": "react"
+                },
+                {
+                  "getInitialMessage": "./utils"
+                },
+                {
+                  "getUpdatedMessage": "./utils"
+                }
+              ],
+              "types": [],
+              "fileName": "app.js",
               "callsTo": [
-                "getSourceFile",
-                "getSourceFileDependencies",
-                "buildCodebaseMap"
+                "getInitialMessage",
+                "getUpdatedMessage"
               ],
               "calledBy": []
             },
             {
-              "name": "getSourceFile",
+              "name": "App",
               "referencedIn": [
-                "src\\codeExtractor.js"
+                "src/app.js"
               ],
-              "startLine": 18,
-              "length": 3,
-              "dependencies": [],
+              "startLine": 5,
+              "length": 14,
+              "dependencies": [
+                {
+                  "useState": "react"
+                },
+                {
+                  "getInitialMessage": "./utils"
+                },
+                {
+                  "getUpdatedMessage": "./utils"
+                }
+              ],
               "types": [],
-              "fileName": "codeExtractor.js",
+              "fileName": "app.js",
               "callsTo": [
-                "getRootFiles",
-                "getSourceFileDependencies",
-                "buildCodebaseMap"
+                "useState",
+                "getInitialMessage",
+                "getUpdatedMessage"
               ],
               "calledBy": []
             },
             {
-              "name": "getSourceFileDependencies",
+              "fileName": "app.js",
+              "name": "handleClick",
               "referencedIn": [
-                "src\\codeExtractor.js"
+                "src/app.js"
               ],
-              "startLine": 26,
+              "startLine": 8,
               "length": 3,
-              "dependencies": [],
-              "types": [],
-              "fileName": "codeExtractor.js",
-              "callsTo": [
-                "getRootFiles",
-                "getSourceFile",
-                "buildCodebaseMap"
+              "dependencies": [
+                {
+                  "getUpdatedMessage": "./utils"
+                }
               ],
-              "calledBy": []
-            },
-            {
-              "name": "buildCodebaseMap",
-              "referencedIn": [
-                "src\\codeExtractor.js"
-              ],
-              "startLine": 34,
-              "length": 4,
-              "dependencies": [],
               "types": [],
-              "fileName": "codeExtractor.js",
               "callsTo": [
-                "getRootFiles",
-                "getSourceFile",
-                "getSourceFileDependencies"
+                "getUpdatedMessage"
               ],
               "calledBy": []
             }
           ],
           "dependencies": [
-            "@traversets/code-extractor",
-            "typescript"
+            "react",
+            "./utils"
           ],
           "exports": [
-            "getRootFiles",
-            "getSourceFile",
-            "getSourceFileDependencies",
-            "buildCodebaseMap"
+            "default"
           ],
           "detailedDependencies": [
             {
-              "module": "@traversets/code-extractor",
-              "imports": []
+              "module": "react",
+              "imports": [
+                "React",
+                "useState"
+              ]
             },
             {
-              "module": "typescript",
-              "imports": []
+              "module": "./utils",
+              "imports": [
+                "getInitialMessage",
+                "getUpdatedMessage"
+              ]
             }
-          ]
+          ],
+          "componentHierarchy": {
+            "App": {
+              "renders": [],
+              "renderedBy": []
+            }
+          }
         }
       ],
       "dependencies": [],
       "exports": [
-        "getRootFiles",
-        "getSourceFile",
-        "getSourceFileDependencies",
-        "buildCodebaseMap"
+        "getInitialMessage",
+        "getUpdatedMessage",
+        "default"
       ]
     }
   ]
