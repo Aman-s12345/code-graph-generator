@@ -58,6 +58,125 @@ const graph = await createCodeGraph({
 
 console.log(JSON.stringify(graph, null, 2));
 ```
+## Response Schema for code-graph-generator
+Here's the schema representation for the output returned by code-graph-generator:
+```bash
+{
+  "name": "string",
+  "packages": [
+    {
+      "name": "string",
+      "files": [
+        {
+          "path": "string",
+          "types": [
+            {
+              "name": "string",
+              "file": "string",
+              "startLine": "number",
+              "length": "number",
+              "properties": [
+                {
+                  "name": "string",
+                  "type": "string",
+                  "parameters": ["string"]
+                }
+              ]
+            }
+          ],
+          "variables": [
+            {
+              "name": "string",
+              "type": "string",
+              "dependencies": [
+                {
+                  "string": "string"
+                }
+              ]
+            }
+          ],
+          "functions": [
+            {
+              "fileName": "string",
+              "name": "string",
+              "referencedIn": ["string"],
+              "startLine": "number",
+              "length": "number",
+              "dependencies": [
+                {
+                  "string": "string"
+                }
+              ],
+              "types": ["string"],
+              "callsTo": ["string"],
+              "calledBy": ["string"]
+            }
+          ],
+          "dependencies": ["string"],
+          "exports": ["string"],
+          "detailedDependencies": [
+            {
+              "module": "string",
+              "imports": ["string"]
+            }
+          ],
+          "componentHierarchy": {
+            "string": {
+              "renders": ["string"],
+              "renderedBy": ["string"]
+            }
+          }
+        }
+      ],
+      "dependencies": ["string"],
+      "exports": ["string"]
+    }
+  ]
+}
+```
+## Schema Description:
+```bash
+
+
+name: Project name
+packages: Array of package objects
+  name: Package name (e.g., "src", ".")
+  files: Array of file objects
+    path: File path relative to project root
+    types: Array of type definitions (interfaces, types, etc.)
+      name: Type name
+      file: File where type is defined
+      startLine: Line number where type starts
+      length: Number of lines in the type definition
+      properties: Array of properties in the type
+        name: Property name
+        type: Property type
+        parameters: Array of parameter types (for methods)
+    variables: Array of variable definitions
+      name: Variable name
+      type: Variable type (e.g., "State", "StateSetter")
+      dependencies: Array of dependencies for this variable
+    functions: Array of function definitions
+      fileName: Name of file containing the function
+      name: Function name
+      referencedIn: Array of files referencing this function
+      startLine: Line number where function starts
+      length: Number of lines in the function
+      dependencies: Array of dependencies used by this function
+      types: Array of type information (e.g., return types)
+      callsTo: Array of functions called by this function
+      calledBy: Array of functions that call this function
+    dependencies: Array of module dependencies for this file
+    exports: Array of exported symbols from this file
+    detailedDependencies: Detailed information about imports
+      module: Module path
+      imports: Array of imported symbols
+    componentHierarchy: Object mapping component names to their relationships
+      renders: Array of components rendered by this component
+      renderedBy: Array of components that render this component
+  dependencies: Array of package dependencies
+  exports: Array of symbols exported by this package
+```
 
 
 ![API OPTIONS](examples/API-options.png)
