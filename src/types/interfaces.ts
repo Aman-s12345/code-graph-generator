@@ -73,6 +73,7 @@ export interface CodeGraphOptions {
     debug?: boolean;
     outputPath?: string;
     streamOutput?: boolean;
+    batchSize?: number;
 }
 
 
