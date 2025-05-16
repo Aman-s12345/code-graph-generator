@@ -56,6 +56,33 @@ const graph = await createCodeGraph({
 
 console.log(JSON.stringify(graph, null, 2));
 ```
+
+## CLI Uses
+Generate a code graph for a project:
+```bash
+npx code-graph-generator ./path/to/project -o ./output.json
+```
+With additional options:
+```bash
+npx code-graph-generator ./path/to/project \
+  --include "**/*.js" "**/*.jsx" \
+  --exclude "**/*.test.js" "**/*.spec.js" \
+  --debug \
+  --pretty \
+  -o ./graph.json
+```
+Available options:
+
+-o, --output <path>: Output path for the generated graph
+-i, --include <patterns...>: File patterns to include
+-e, --exclude <patterns...>: File patterns to exclude
+-d, --debug: Enable debug logging
+-c, --concurrency <number>: Number of concurrent file operations
+--include-declarations: Include .d.ts files in analysis
+--include-node-modules: Include node_modules in analysis (not recommended)
+--stream: Stream output directly without relationship analysis
+--pretty: Format the output JSON with indentation
+
 ## Response Schema for code-graph-generator
 Here's the schema representation for the output returned by code-graph-generator:
 ```bash

@@ -1,8 +1,11 @@
 {
   "name": "code-graph-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "code-graph-generator": "./dist/cli.js"
+  },
   "files": [
     "dist",
     "README.md",
@@ -10,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "test": "jest",
     "dev": "ts-node src/index.ts",
     "lint": "eslint src --ext .ts",
@@ -43,8 +47,11 @@
     "@babel/types": "^7.22.5",
     "@typescript-eslint/parser": "^6.0.0",
     "@typescript-eslint/typescript-estree": "^6.0.0",
-    "glob": "^10.3.3",
-    "micromatch": "^4.0.5"
+    "chalk": "^4.1.2",
+    "commander": "^13.1.0",
+    "glob": "^10.4.5",
+    "micromatch": "^4.0.5",
+    "ora": "^5.4.1"
   },
   "devDependencies": {
     "@types/babel__traverse": "^7.20.1",
