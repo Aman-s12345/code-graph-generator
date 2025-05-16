@@ -1,5 +1,5 @@
 {
-  "name": "Test Project",
+  "name": "test-project",
   "packages": [
     {
       "name": ".",
@@ -72,61 +72,6 @@
       "name": "src",
       "files": [
         {
-          "path": "src/util.ts",
-          "types": [],
-          "variables": [],
-          "functions": [
-            {
-              "name": "root",
-              "referencedIn": [],
-              "startLine": 1,
-              "length": 9,
-              "dependencies": [],
-              "types": [],
-              "fileName": "util.ts",
-              "callsTo": [],
-              "calledBy": []
-            },
-            {
-              "name": "getInitialMessage",
-              "referencedIn": [
-                "src/util.ts"
-              ],
-              "startLine": 2,
-              "length": 3,
-              "dependencies": [],
-              "types": [],
-              "fileName": "util.ts",
-              "callsTo": [],
-              "calledBy": [
-                "src/app.js:App"
-              ]
-            },
-            {
-              "name": "getUpdatedMessage",
-              "referencedIn": [
-                "src/util.ts"
-              ],
-              "startLine": 6,
-              "length": 3,
-              "dependencies": [],
-              "types": [],
-              "fileName": "util.ts",
-              "callsTo": [],
-              "calledBy": [
-                "src/app.js:App",
-                "src/app.js:handleClick"
-              ]
-            }
-          ],
-          "dependencies": [],
-          "exports": [
-            "getInitialMessage",
-            "getUpdatedMessage"
-          ],
-          "detailedDependencies": []
-        },
-        {
           "path": "src/app.js",
           "types": [],
           "variables": [],
@@ -152,10 +97,7 @@
               ],
               "types": [],
               "fileName": "app.js",
-              "callsTo": [
-                "getInitialMessage",
-                "getUpdatedMessage"
-              ],
+              "callsTo": [],
               "calledBy": []
             },
             {
@@ -234,12 +176,31 @@
               "renderedBy": []
             }
           }
+        },
+        {
+          "path": "src/util.ts",
+          "types": [],
+          "variables": [],
+          "functions": [
+            {
+              "name": "root",
+              "referencedIn": [],
+              "startLine": 1,
+              "length": 9,
+              "dependencies": [],
+              "types": [],
+              "fileName": "util.ts",
+              "callsTo": [],
+              "calledBy": []
+            }
+          ],
+          "dependencies": [],
+          "exports": [],
+          "detailedDependencies": []
         }
       ],
       "dependencies": [],
       "exports": [
-        "getInitialMessage",
-        "getUpdatedMessage",
         "default"
       ]
     }
