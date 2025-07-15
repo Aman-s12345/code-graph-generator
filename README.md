@@ -340,9 +340,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 Babel for AST parsing
-TypeScript for type analysis
 glob for file discovery
-
 
 
 
