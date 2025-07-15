@@ -1,5 +1,3 @@
-
-
 // // src/utils/ast-utils.ts
 /**
  * Gets the starting line number of an AST node.
