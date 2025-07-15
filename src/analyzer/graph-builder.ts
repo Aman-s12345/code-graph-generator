@@ -37,7 +37,6 @@ export class IncrementalGraphBuilder implements GraphBuilder {
         // Store file in map for quick lookups
         this.fileMap.set(normalizedPath, fileGraph);
 
-        // Determine package name from directory
         const packageName = normalizePath(path.dirname(normalizedPath));
 
         // Create package if it doesn't exist

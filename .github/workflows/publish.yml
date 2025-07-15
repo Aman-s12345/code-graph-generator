@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      # Replace npm ci with npm install to avoid strict dependency checks
       - name: Install dependencies
         run: |
           rm -f package-lock.json
