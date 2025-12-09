@@ -71,7 +71,9 @@ npx code-graph-generator ./path/to/project \
   --pretty \
   -o ./graph.json
 ```
-Available options:
+
+### Available options:
+```bash
 
 -o, --output <path>: Output path for the generated graph
 -i, --include <patterns...>: File patterns to include
@@ -82,6 +84,7 @@ Available options:
 --include-node-modules: Include node_modules in analysis (not recommended)
 --stream: Stream output directly without relationship analysis
 --pretty: Format the output JSON with indentation
+```
 
 ## Response Schema for code-graph-generator
 Here's the schema representation for the output returned by code-graph-generator:
